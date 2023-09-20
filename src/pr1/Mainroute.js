@@ -6,7 +6,7 @@ import Hollywood from "./Hollywood"
 import Fitness from "./Fitness"
 import Food from "./Food"
 import "./sty.css"
-import React, { useState } from "react"
+import React from "react"
 import Datacompo from "./Datacompo"
 import Detailcompo from "./Detailcompo"
 

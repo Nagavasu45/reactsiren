@@ -6,7 +6,7 @@ import { Store } from './Datacompo'
 
 const Detailcompo = () => {
     const id=useParams().id
-    console.log(id)
+    // console.log(id)
     const nav=useNavigate()
     const [data1]=useContext(Store)
     console.log(data1)
@@ -40,15 +40,15 @@ const Detailcompo = () => {
                 <div><button onClick={()=>nav(-1)}>Back</button></div>
                 <div className='last1'>
                 
-                {data1.map((item)=>{
-                  if(item.id%20===0)
+                {data1.filter((item1)=>item1.id%20===0).map((item)=>{
+                  // if(item.id%20===0)
 
                   return(                    
                     <>
                     
                     <div className='last2'>
                       <h3>{item.name}</h3>
-                      <img className='last3' src={item.imgstore}/>
+                      <img className='last3' src={item.imgstore} alt='not loaded'/>
                       <h4>{item.heading}</h4>
                       <div>{item.details}</div>
                     </div>
