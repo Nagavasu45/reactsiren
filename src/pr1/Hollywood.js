@@ -15,7 +15,7 @@ function Hollywood(){
             // if(item.level==="medium" && item.catageory==="holly"){
             
                 return(
-            <><Link to={`/Detailcompo/${item.id}`} className="l1">
+            <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Hollywood'}} className="l1">
                     <div className="b4">
                     <img className="b5" src={item.imgstore} alt="no loaded"/>
                     
@@ -40,7 +40,7 @@ function Hollywood(){
         {data1.filter((item1)=>item1.level==="maintop3").map((item)=>{
             // if(item.level==="maintop3"){
             return(
-        <><Link to={`/Detailcompo/${item.id}`} className="l1">
+        <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Hollywood'}} className="l1">
         <div className="b13">
             <img className=" topimg" src={item.imgstore} alt="not loaded"/>
             <div className="c11">{item.heading}
@@ -59,7 +59,7 @@ function Hollywood(){
             // if(item.id%15===0)
                 return(
                     
-                    <><Link to={`/Detailcompo/${item.id}`} className="l1">
+                    <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Hollywood'}} className="l1">
                     <div className="b9">
                         <img className="b10" src={item.imgstore} alt="not loaded"/>
                     
@@ -79,7 +79,7 @@ function Hollywood(){
             
             })}
             <div className="bollyads2">
-            <div className="ads1">
+            <div>
         adevertizement
         </div>
 
@@ -115,6 +115,9 @@ function Hollywood(){
     </NavLink>
     <NavLink to="/Food">
     <div>Food</div>
+    </NavLink>
+    <NavLink to="/Technology">
+    <div>Technology</div>
     </NavLink>
     </div>
     <div >

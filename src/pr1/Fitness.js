@@ -13,7 +13,8 @@ function Fitness(){
            {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="fitness").map((item)=>{
             // if(item.level==="medium" && item.catageory==="fitness"){
                 return(
-            <><Link to={`/Detailcompo/${item.id}`} className="l1">
+            <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
+                {/* <Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1"></Link> */}
                     <div className="b4">
                     <img className="b5" src={item.imgstore} alt="no loaded"/>
                     
@@ -38,7 +39,7 @@ function Fitness(){
         {data1.filter((item1)=>item1.level==="maintop4").map((item)=>{
             // if(item.level==="maintop4"){
             return(
-        <><Link to={`/Detailcompo/${item.id}`} className="l1">
+        <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
         <div className="b13">
             <img className=" topimg" src={item.imgstore} alt="not loaded"/>
             <div className="c11">{item.heading}
@@ -56,7 +57,7 @@ function Fitness(){
             // if(item.level==="top" && item.catageory==="fitness"){
                 return(
                     
-                    <><Link to={`/Detailcompo/${item.id}`} className="l1">
+                    <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
                     <div className="b9">
                         <img className="b10" src={item.imgstore} alt="not loaded"/>
                     
@@ -76,7 +77,7 @@ function Fitness(){
             
             })}
             <div className="bollyads3">
-            <div className="ads1">
+            <div>
         adevertizement
         </div>
 
@@ -111,6 +112,9 @@ function Fitness(){
     </NavLink>
     <NavLink to="/Food">
     <div>Food</div>
+    </NavLink>
+    <NavLink to="/Technology">
+    <div>Technology</div>
     </NavLink>
     </div>
     <div >

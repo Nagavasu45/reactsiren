@@ -10,6 +10,7 @@ function Bollywood(){
     const [data1]=useContext(Store)
     
     
+    
     console.log(data1)
     return(       
 
@@ -19,10 +20,11 @@ function Bollywood(){
     <div className="mainb">
     <div className="b1">
        <div className="b3">Bollywood</div> 
-       {data1.filter((item1)=>item1.level==="medium").map((item)=>{
+       {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="bolly").map((item)=>{
         // if(item.level==="medium" && item.catageory==="bolly"){
             return(
-        <><Link to={`/Detailcompo/${item.id}`} className="l1">
+        <>
+            {/* state:{item.catageory} */}<Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
                 <div className="b4">
                 <img className="b5" src={item.imgstore} alt="no loaded"/>
                 
@@ -47,7 +49,8 @@ function Bollywood(){
     {data1.filter((item1)=>item1.level==='maintop1').map((item)=>{
         // if(item.level==="maintop1"){
         return(
-    <><Link to={`/Detailcompo/${item.id}`} className="l1">
+    <><Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
+           
     <div className="b13">
         <img className=" topimg" src={item.imgstore} alt="not loaded"/>
         <div className="c11">{item.heading}
@@ -67,7 +70,8 @@ function Bollywood(){
             return(
                 
                 <>
-                <Link to={`/Detailcompo/${item.id}`} className="l1">
+                <Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
+           
                 <div className="b9">
                     <img className="b10" src={item.imgstore} alt="not loaded"/>
                 
@@ -86,8 +90,8 @@ function Bollywood(){
             )
     
         })}
-    <div className="bollyads">
-        <div className="ads1">
+    <div className="bollyads5">
+        <div >
         adevertizement
         </div>
 
@@ -123,6 +127,9 @@ function Bollywood(){
     </NavLink>
     <NavLink to="/Food">
     <div>Food</div>
+    </NavLink>
+    <NavLink to="/Technology">
+    <div>Technology</div>
     </NavLink>
     </div>
     <div >

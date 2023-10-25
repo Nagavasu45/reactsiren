@@ -17,7 +17,7 @@ function Food(){
            {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="food").map((item)=>{
             // if(item.level==="medium" && item.catageory==="food"){
                 return(
-            <><Link to={`/Detailcompo/${item.id}`} className="l1">
+            <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Food'}} className="l1">
                     <div className="b4">
                     <img className="b5" src={item.imgstore} alt="no loaded"/>
                     
@@ -42,7 +42,7 @@ function Food(){
         {data1.filter((item1)=>item1.level==="maintop5").map((item)=>{
             // if(item.level==="maintop5"){
             return(
-        <><Link to={`/Detailcompo/${item.id}`} className="l1">
+        <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Food'}} className="l1">
         <div className="b13">
             <img className=" topimg" src={item.imgstore} alt="not loaded"/>
             <div className="c11">{item.heading}
@@ -60,7 +60,7 @@ function Food(){
             // if(item.level==="top" && item.catageory==="food"){
                 return(
                     
-                    <><Link to={`/Detailcompo/${item.id}`} className="l1">
+                    <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Food'}} className="l1">
                     <div className="b9">
                         <img className="b10" src={item.imgstore} alt="not loaded"/>
                     
@@ -80,7 +80,7 @@ function Food(){
             
             })}
             <div className="bollyads4">
-            <div className="ads1">
+            <div >
         adevertizement
         </div>
 
@@ -115,6 +115,9 @@ function Food(){
     </NavLink>
     <NavLink to="/Food">
     <div>Food</div>
+    </NavLink>
+    <NavLink to="/Technology">
+    <div>Technology</div>
     </NavLink>
     </div>
     <div >

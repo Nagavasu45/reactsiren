@@ -1,15 +1,41 @@
 import React, { useContext } from 'react'
-import {  useNavigate, useParams } from 'react-router-dom'
+import {   Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { Store } from './Datacompo'
 // import icons.PNG from "./images"
 
 
 const Detailcompo = () => {
-    const id=useParams().id
+    // const id=useParams().id
+    const {id,catageory}=useParams()
+    const loc=useLocation()
+    
+    // var cat1="";
+    
+    
+    // console.log(loc)
     // console.log(id)
     const nav=useNavigate()
     const [data1]=useContext(Store)
-    console.log(data1)
+    // // console.log(data1)
+    // (data1.filter((data2)=>data2.id===parseInt(id)).map((item)=>{
+    //   return(<>
+    //   {data1.filter((data3)=>data3.catageory===item.catageory).map((item3)=>{
+    //     return(
+    //       <>
+    //       <div>{item3.name}</div>
+    //       <div>{item3.catageory}</div>
+    //       <div>{item3.imgstore}</div>
+    //       </>
+    //     )
+    //   })
+    // }
+      
+    //     </>
+    //   )
+      
+      
+    // }))
+    // // console.log(cat1)
     
   return (
     <div>
@@ -40,23 +66,26 @@ const Detailcompo = () => {
                 <div><button onClick={()=>nav(-1)}>Back</button></div>
                 <div className='last1'>
                 
-                {data1.filter((item1)=>item1.id%20===0).map((item)=>{
+                {data1.filter((item1)=>item1.catageory===catageory).slice(0,3).map((item,index)=>{
                   // if(item.id%20===0)
 
                   return(                    
                     <>
                     
-                    <div className='last2'>
+                    <div className='last2' key={index}>
+                    <Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:loc.catageory===catageory}}  className="l1">
                       <h3>{item.name}</h3>
+                      
                       <img className='last3' src={item.imgstore} alt='not loaded'/>
+                      
                       <h4>{item.heading}</h4>
                       <div>{item.details}</div>
+                      </Link>
                     </div>
-                    
+                   
                     </>
                   )
         })}
-
 
                 </div>
 
