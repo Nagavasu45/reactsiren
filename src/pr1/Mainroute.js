@@ -11,27 +11,26 @@ import Datacompo from "./Datacompo"
 import Detailcompo from "./Detailcompo"
 
 function Mainroute(){
-const [count,setCount]=useState(0)
-var v1=document.getElementById('act1')
+// const [count,setCount]=useState(0)
+// var v1=document.getElementById('act1')
+const [close,setClose]=useState(false)
+const sty={
+
+    display:close?'block':'none'
+}
 
 const handlebutton=(()=>{
-setCount(count+1)
+    setClose(!close)
 
-// if (count%2===0){
-    
-//     console.log(count)
-// }
-
-    v1.classList.remove('hide')
-    console.log(count)
 })
 const handleaction=(()=>{
-    v1.classList.add('hide')
+    // v1.classList.add('hide')
+    setClose(false)
 }
 
 )
-console.log(v1)
-console.log(count)
+// console.log(v1)
+
 
 
     return(
@@ -52,7 +51,7 @@ console.log(count)
         <NavLink style={({isActive})=>({color:isActive ? "green" : "balck"})} className="three" to="/Fitness">Fitness</NavLink>
         <NavLink style={({isActive})=>({color:isActive ? "green" : "balck"})} className="three" to="/Food">Food</NavLink>
         </div>
-        <div className="twohide" id="act1">
+        <div className="twohide" id="act1" style={sty}>
         <button className="mob1" onClick={handleaction}><NavLink style={({isActive})=>({color:isActive ? "green" : "black"})} className="three" to="/">Home</NavLink></button>
         <button className="mob1" onClick={handleaction}><NavLink style={({isActive})=>({color:isActive ? "green" : "balck"})} className="three" to="/Bollywood">Bollywood</NavLink></button>
         <button className="mob1" onClick={handleaction}><NavLink  style={({isActive})=>({color:isActive ? "green" : "balck"})} className="three" to="/Technology">Technology</NavLink></button>

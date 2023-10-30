@@ -10,10 +10,10 @@ function Fitness(){
         <div className="mainb">
         <div className="b1">
            <div className="b3">Fitness</div> 
-           {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="fitness").map((item)=>{
+           {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="fitness").map((item,index)=>{
             // if(item.level==="medium" && item.catageory==="fitness"){
                 return(
-            <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
+            <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
                 {/* <Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1"></Link> */}
                     <div className="b4">
                     <img className="b5" src={item.imgstore} alt="no loaded"/>
@@ -25,7 +25,7 @@ function Fitness(){
                     </div>
                     </div>
                     </Link>
-                    </>
+                    </div>
                     
             )
                 
@@ -36,10 +36,10 @@ function Fitness(){
         <div className="b8">
             Top Posts
         </div>
-        {data1.filter((item1)=>item1.level==="maintop4").map((item)=>{
+        {data1.filter((item1)=>item1.level==="maintop4").map((item,index)=>{
             // if(item.level==="maintop4"){
             return(
-        <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
+        <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
         <div className="b13">
             <img className=" topimg" src={item.imgstore} alt="not loaded"/>
             <div className="c11">{item.heading}
@@ -47,17 +47,17 @@ function Fitness(){
             </div>
         </div>
         </Link>
-        </>)
+        </div>)
             
             
         })}
         
         
-        {data1.filter((item1)=>item1.level==="top" && item1.catageory==="fitness").map((item)=>{
+        {data1.filter((item1)=>item1.level==="top" && item1.catageory==="fitness").map((item,index)=>{
             // if(item.level==="top" && item.catageory==="fitness"){
                 return(
                     
-                    <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
+                    <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Fitness'}} className="l1">
                     <div className="b9">
                         <img className="b10" src={item.imgstore} alt="not loaded"/>
                     
@@ -71,7 +71,7 @@ function Fitness(){
                     </div>
                     
                     </Link>
-                    </>
+                    </div>
                     
                 )
             

@@ -20,10 +20,10 @@ function Bollywood(){
     <div className="mainb">
     <div className="b1">
        <div className="b3">Bollywood</div> 
-       {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="bolly").map((item)=>{
+       {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="bolly").map((item,index)=>{
         // if(item.level==="medium" && item.catageory==="bolly"){
             return(
-        <>
+        <div key={index}>
             {/* state:{item.catageory} */}<Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
                 <div className="b4">
                 <img className="b5" src={item.imgstore} alt="no loaded"/>
@@ -35,7 +35,7 @@ function Bollywood(){
                 </div>
                 </div>
                 </Link>
-                </>
+                </div>
                 
         )
             
@@ -46,10 +46,10 @@ function Bollywood(){
     <div className="b8">
         Top Posts
     </div>
-    {data1.filter((item1)=>item1.level==='maintop1').map((item)=>{
+    {data1.filter((item1)=>item1.level==='maintop1').map((item,index)=>{
         // if(item.level==="maintop1"){
         return(
-    <><Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
+    <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
            
     <div className="b13">
         <img className=" topimg" src={item.imgstore} alt="not loaded"/>
@@ -58,18 +58,18 @@ function Bollywood(){
         </div>
     </div>
     </Link>
-    </>)
+    </div>)
     
         
 
     })}
     
     
-    {data1.filter((item1)=>item1.level==="top" && item1.catageory==="bolly").map((item)=>{
+    {data1.filter((item1)=>item1.level==="top" && item1.catageory==="bolly").map((item,index)=>{
         // if(item.level==="top" && item.catageory==="bolly"){
             return(
                 
-                <>
+                <div key={index}>
                 <Link to={`/Detailcompo/${item.catageory}/${item.id}` } state={{ref:'/Bollywood'}} className="l1">
            
                 <div className="b9">
@@ -85,7 +85,7 @@ function Bollywood(){
                 </div>
                 
                 </Link>
-                </>
+                </div>
                 
             )
     

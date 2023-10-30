@@ -12,10 +12,10 @@ function Technology(){
         <div className="mainb">
         <div className="b1">
            <div className="b3">Technology</div> 
-           {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="tech").map((item)=>{
+           {data1.filter((item1)=>item1.level==="medium" && item1.catageory==="tech").map((item,index)=>{
             // if(item.level==="medium" && item.catageory==="tech"){
                 return(
-            <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Technology'}} className="l1">
+            <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Technology'}} className="l1">
                     <div className="b4">
                     <img className="b5" src={item.imgstore} alt="no loaded"/>
                     
@@ -26,7 +26,7 @@ function Technology(){
                     </div>
                     </div>
                     </Link>
-                    </>
+                    </div>
                     
             )
                 
@@ -37,10 +37,10 @@ function Technology(){
         <div className="b8">
             Top Posts
         </div>
-        {data1.filter((item1)=>item1.level==="maintop2").map((item)=>{
+        {data1.filter((item1)=>item1.level==="maintop2").map((item,index)=>{
             // if(item.level==="maintop2"){
             return(
-        <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Technology'}} className="l1">
+        <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Technology'}} className="l1">
         <div className="b13">
             <img className=" topimg" src={item.imgstore} alt="not loaded"/>
             <div className="c11">{item.heading}
@@ -48,18 +48,18 @@ function Technology(){
             </div>
         </div>
         </Link>
-        </>)
+        </div>)
             
             
     
         })}
         
         
-        {data1.filter((item1)=>item1.level==="top" && item1.catageory==="tech").map((item)=>{
+        {data1.filter((item1)=>item1.level==="top" && item1.catageory==="tech").map((item,index)=>{
             // if(item.level==="top" && item.catageory==="tech"){
                 return(
                     
-                    <><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Technology'}} className="l1">
+                    <div key={index}><Link to={`/Detailcompo/${item.catageory}/${item.id}`} state={{ref:'/Technology'}} className="l1">
                     <div className="b9">
                         <img className="b10" src={item.imgstore} alt="not loaded"/>
                     
@@ -73,7 +73,7 @@ function Technology(){
                     </div>
                     
                     </Link>
-                    </>
+                    </div>
                     
                 )
             
